@@ -5,8 +5,28 @@
 			"referenceName": "AzureSqlDatabase3",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"schemaname": {
+				"type": "string",
+				"defaultValue": "dbo"
+			},
+			"tablename": {
+				"type": "string",
+				"defaultValue": "DailySales"
+			}
+		},
 		"annotations": [],
 		"type": "AzureSqlTable",
-		"schema": []
+		"schema": [],
+		"typeProperties": {
+			"schema": {
+				"value": "@dataset().schemaname",
+				"type": "Expression"
+			},
+			"table": {
+				"value": "@dataset().tablename",
+				"type": "Expression"
+			}
+		}
 	}
 }
