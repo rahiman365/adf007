@@ -186,7 +186,7 @@
 			},
 			"tablename": {
 				"type": "string",
-				"defaultValue": "DimCustomer"
+				"defaultValue": "DailySales"
 			}
 		},
 		"annotations": [],
