@@ -1,0 +1,22 @@
+{
+	"name": "LocalSqlServerTable",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SqlServer2",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"FileName": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "new"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,24 @@
+{
+	"name": "TRBSHEDULE_ECOMCSV_TO_PARQUET",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "pl_v_file_is_exist_copy",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Day",
+				"interval": 1,
+				"startTime": "2026-03-11T06:16:00",
+				"timeZone": "India Standard Time"
+			}
+		}
+	}
+}

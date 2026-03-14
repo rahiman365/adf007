@@ -1,0 +1,41 @@
+{
+	"name": "Json1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_JSON_FILES",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "EmployeesNested.json",
+				"fileSystem": "json-input-files"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"EmployeeKey": {
+					"type": "integer"
+				},
+				"EmpName": {
+					"type": "string"
+				},
+				"Contact": {
+					"type": "object",
+					"properties": {
+						"Email": {
+							"type": "string"
+						},
+						"Phone": {
+							"type": "string"
+						}
+					}
+				}
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

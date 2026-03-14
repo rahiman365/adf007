@@ -1,0 +1,17 @@
+{
+	"name": "DS_TEST_DB",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SqlServer2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "employeesnew"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
