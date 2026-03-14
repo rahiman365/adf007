@@ -30,10 +30,6 @@
 						"type": "AzureSqlSink",
 						"writeBehavior": "insert",
 						"sqlWriterUseTableLock": false,
-						"tableOption": {
-							"value": "@pipeline().parameters.tablename",
-							"type": "Expression"
-						},
 						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
