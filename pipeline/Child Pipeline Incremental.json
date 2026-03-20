@@ -124,7 +124,13 @@
 							"outputs": [
 								{
 									"referenceName": "DS_SQL_TABLE_PAR",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"Table_Name": {
+											"value": "@pipeline().parameters.TableName",
+											"type": "Expression"
+										}
+									}
 								}
 							]
 						},
