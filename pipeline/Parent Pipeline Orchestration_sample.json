@@ -30,37 +30,6 @@
 					},
 					"firstRowOnly": false
 				}
-			},
-			{
-				"name": "ForEachSQLTable",
-				"type": "ForEach",
-				"dependsOn": [
-					{
-						"activity": "LKUP_SQL_TABLE_WATRMRK_DW",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"userProperties": [],
-				"typeProperties": {
-					"items": {
-						"value": "@activity('LKUP_SQL_TABLE_WATRMRK_DW').output.value",
-						"type": "Expression"
-					},
-					"activities": [
-						{
-							"name": "Set variable1",
-							"type": "SetVariable",
-							"dependsOn": [],
-							"policy": {
-								"secureOutput": false,
-								"secureInput": false
-							},
-							"userProperties": []
-						}
-					]
-				}
 			}
 		],
 		"annotations": []
