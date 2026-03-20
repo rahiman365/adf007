@@ -66,7 +66,16 @@
 								"secureOutput": false,
 								"secureInput": false
 							},
-							"userProperties": [],
+							"userProperties": [
+								{
+									"name": "Source",
+									"value": "@{pipeline().parameters.TableSchema}.@{pipeline().parameters.TableName}"
+								},
+								{
+									"name": "Destination",
+									"value": "retaildw/@{concat(pipeline().parameters.TableName,'/',formatDateTime(utcNow(),'yyyy/MM/dd’))}/@{concat(pipeline().parameters.TableName,'_',formatDateTime(utcNow(),'yyyyMMddHHmmss'),'.parquet')}"
+								}
+							],
 							"typeProperties": {
 								"source": {
 									"type": "SqlServerSource",
