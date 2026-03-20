@@ -32,13 +32,22 @@
 		"LS_JSON_FILES_accountKey": {
 			"value": ""
 		},
+		"LS_LKUP_MAX_VALUE_password": {
+			"value": ""
+		},
 		"LS_LOOKUP_OP_accountKey": {
 			"value": ""
 		},
 		"LS_OUTPUT_FILES_accountKey": {
 			"value": ""
 		},
+		"LS_SQL_PARQUET_accountKey": {
+			"value": ""
+		},
 		"LS_SQL_SERVER_password": {
+			"value": ""
+		},
+		"LS_SQL_SERVER_PROJECT_DB_password": {
 			"value": ""
 		},
 		"LS_VALIDATION_accountKey": {
@@ -116,11 +125,23 @@
 		"LS_JSON_FILES_properties_typeProperties_url": {
 			"value": "https://mycontainerabdul.dfs.core.windows.net/"
 		},
+		"LS_LKUP_MAX_VALUE_properties_typeProperties_server": {
+			"value": "RAHMAN"
+		},
+		"LS_LKUP_MAX_VALUE_properties_typeProperties_database": {
+			"value": "project_db"
+		},
+		"LS_LKUP_MAX_VALUE_properties_typeProperties_userName": {
+			"value": "junnu"
+		},
 		"LS_LOOKUP_OP_properties_typeProperties_url": {
 			"value": "https://mycontainerabdul.dfs.core.windows.net/"
 		},
 		"LS_OUTPUT_FILES_properties_typeProperties_url": {
 			"value": "https://mycontainerabdul.dfs.core.windows.net/"
+		},
+		"LS_SQL_PARQUET_properties_typeProperties_url": {
+			"value": "https://retaildwproject.dfs.core.windows.net/"
 		},
 		"LS_SQL_SERVER_properties_typeProperties_server": {
 			"value": "RAHMAN"
@@ -129,6 +150,15 @@
 			"value": "test_db"
 		},
 		"LS_SQL_SERVER_properties_typeProperties_userName": {
+			"value": "junnu"
+		},
+		"LS_SQL_SERVER_PROJECT_DB_properties_typeProperties_server": {
+			"value": "RAHMAN"
+		},
+		"LS_SQL_SERVER_PROJECT_DB_properties_typeProperties_database": {
+			"value": "project_db"
+		},
+		"LS_SQL_SERVER_PROJECT_DB_properties_typeProperties_userName": {
 			"value": "junnu"
 		},
 		"LS_VALIDATION_properties_typeProperties_url": {
