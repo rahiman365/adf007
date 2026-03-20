@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Lookup1",
+				"name": "LKP_MAX_VALUE",
 				"type": "Lookup",
 				"dependsOn": [],
 				"policy": {
@@ -14,8 +14,35 @@
 					"secureInput": false
 				},
 				"userProperties": []
+			},
+			{
+				"name": "If Condition1",
+				"type": "IfCondition",
+				"dependsOn": [
+					{
+						"activity": "LKP_MAX_VALUE",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": []
 			}
 		],
+		"parameters": {
+			"TableSchema": {
+				"type": "string"
+			},
+			"TableName": {
+				"type": "string"
+			},
+			"Watermarkcolumn": {
+				"type": "string"
+			},
+			"LastLoadValue": {
+				"type": "string"
+			}
+		},
 		"annotations": []
 	}
 }
