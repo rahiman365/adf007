@@ -1,0 +1,162 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adfabduldev"
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
+		"AzureDataLakeStorage2_accountKey": {
+			"value": ""
+		},
+		"AzureSqlDatabase3_password": {
+			"value": ""
+		},
+		"DS_ADLS2_PARQUET_accountKey": {
+			"value": ""
+		},
+		"DS_SQL_PARQUET_accountKey": {
+			"value": ""
+		},
+		"LS_ALL_FILES_INPUT_accountKey": {
+			"value": ""
+		},
+		"LS_CSV_INPUT_accountKey": {
+			"value": ""
+		},
+		"LS_FILES_accountKey": {
+			"value": ""
+		},
+		"LS_JSON_FILES_accountKey": {
+			"value": ""
+		},
+		"LS_LOOKUP_OP_accountKey": {
+			"value": ""
+		},
+		"LS_OUTPUT_FILES_accountKey": {
+			"value": ""
+		},
+		"LS_SQL_SERVER_password": {
+			"value": ""
+		},
+		"LS_VALIDATION_accountKey": {
+			"value": ""
+		},
+		"SqlServer1_password": {
+			"value": ""
+		},
+		"SqlServer2_password": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://mycontainerabdul.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage2_properties_typeProperties_url": {
+			"value": "https://mycontainerabdul.dfs.core.windows.net/"
+		},
+		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"value": "https://keyvaultprojectdataabdul.vault.azure.net/"
+		},
+		"AzureKeyVault2_properties_typeProperties_baseUrl": {
+			"value": "https://keyvaultprojectdataabdul.vault.azure.net/"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_server": {
+			"value": "abdulsqlserveronline.database.windows.net"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_database": {
+			"value": "testdata"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_userName": {
+			"value": "admindata"
+		},
+		"AzureSqlDatabase2_properties_typeProperties_server": {
+			"value": "abdulsqlserveronline.database.windows.net"
+		},
+		"AzureSqlDatabase2_properties_typeProperties_database": {
+			"value": "testdata"
+		},
+		"AzureSqlDatabase2_properties_typeProperties_userName": {
+			"value": "admindata"
+		},
+		"AzureSqlDatabase3_properties_typeProperties_server": {
+			"value": "abdulsqlserveronline.database.windows.net"
+		},
+		"AzureSqlDatabase3_properties_typeProperties_database": {
+			"value": "testdata"
+		},
+		"AzureSqlDatabase3_properties_typeProperties_userName": {
+			"value": "admindata"
+		},
+		"DS_ADLS2_PARQUET_properties_typeProperties_url": {
+			"value": "https://mycontainerabdul.dfs.core.windows.net/"
+		},
+		"DS_SQL_PARQUET_properties_typeProperties_url": {
+			"value": "https://mycontainerabdul.dfs.core.windows.net/"
+		},
+		"LS_ALL_FILES_INPUT_properties_typeProperties_url": {
+			"value": "https://mycontainerabdul.dfs.core.windows.net/"
+		},
+		"LS_ASQL_properties_typeProperties_server": {
+			"value": "abdulsqlserveronline.database.windows.net"
+		},
+		"LS_ASQL_properties_typeProperties_database": {
+			"value": "testdata"
+		},
+		"LS_ASQL_properties_typeProperties_userName": {
+			"value": "admindata"
+		},
+		"LS_CSV_INPUT_properties_typeProperties_url": {
+			"value": "https://mycontainerabdul.dfs.core.windows.net/"
+		},
+		"LS_FILES_properties_typeProperties_url": {
+			"value": "https://mycontainerabdul.dfs.core.windows.net/"
+		},
+		"LS_JSON_FILES_properties_typeProperties_url": {
+			"value": "https://mycontainerabdul.dfs.core.windows.net/"
+		},
+		"LS_LOOKUP_OP_properties_typeProperties_url": {
+			"value": "https://mycontainerabdul.dfs.core.windows.net/"
+		},
+		"LS_OUTPUT_FILES_properties_typeProperties_url": {
+			"value": "https://mycontainerabdul.dfs.core.windows.net/"
+		},
+		"LS_SQL_SERVER_properties_typeProperties_server": {
+			"value": "RAHMAN"
+		},
+		"LS_SQL_SERVER_properties_typeProperties_database": {
+			"value": "test_db"
+		},
+		"LS_SQL_SERVER_properties_typeProperties_userName": {
+			"value": "junnu"
+		},
+		"LS_VALIDATION_properties_typeProperties_url": {
+			"value": "https://mycontainerabdul.dfs.core.windows.net/"
+		},
+		"SqlServer1_properties_typeProperties_server": {
+			"value": "localhost"
+		},
+		"SqlServer1_properties_typeProperties_database": {
+			"value": "test_db"
+		},
+		"SqlServer1_properties_typeProperties_userName": {
+			"value": "junnu"
+		},
+		"SqlServer2_properties_typeProperties_server": {
+			"value": "RAHMAN"
+		},
+		"SqlServer2_properties_typeProperties_database": {
+			"value": "test_db"
+		},
+		"SqlServer2_properties_typeProperties_userName": {
+			"value": "junnu"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
