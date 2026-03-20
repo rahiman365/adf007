@@ -6,12 +6,12 @@
 		"type": "SqlServer",
 		"typeProperties": {
 			"server": "RAHMAN",
-			"database": "project_b",
+			"database": "project_db",
 			"encrypt": "optional",
 			"trustServerCertificate": false,
 			"authenticationType": "SQL",
 			"userName": "junnu",
-			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJkNDEwZTgxMS0wZjI5LTQ2YTMtYmM1Yi1mNTQ3NDVlMWVhZmUiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJiNTAyODFjNi05ZWQ4LTQzZmMtYjhjNi1mMDhlZGM2NDNlZGMiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
 		},
 		"connectVia": {
 			"referenceName": "integrationRuntimeSQLServer",
