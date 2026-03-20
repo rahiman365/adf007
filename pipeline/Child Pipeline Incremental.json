@@ -13,10 +13,28 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": []
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"sqlReaderQuery": "SELECT MAX(@{pipeline().parameters.WatermarkColumn}) AS MaxValue\nFROM @{pipeline().parameters.TableSchema}.@{pipeline().parameters.TableName}\n",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"dataset": {
+						"referenceName": "DS_LKUP_MAX_VALUE",
+						"type": "DatasetReference",
+						"parameters": {
+							"schemaname": {
+								"value": "@pipeline().parameters.TableSchema",
+								"type": "Expression"
+							}
+						}
+					}
+				}
 			},
 			{
-				"name": "If Condition1",
+				"name": "IF_NEW_RECORD_EXISTS",
 				"type": "IfCondition",
 				"dependsOn": [
 					{
@@ -36,7 +54,7 @@
 			"TableName": {
 				"type": "string"
 			},
-			"Watermarkcolumn": {
+			"WatermarkColumn": {
 				"type": "string"
 			},
 			"LastLoadValue": {
