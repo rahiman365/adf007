@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "LKP_SQL_TABLE_WATRMRK_DW",
+				"name": "LKUP_SQL_TABLE_WATRMRK_DW",
 				"type": "Lookup",
 				"dependsOn": [],
 				"policy": {
@@ -36,7 +36,7 @@
 				"type": "ForEach",
 				"dependsOn": [
 					{
-						"activity": "LKP_SQL_TABLE_WATRMRK_DW",
+						"activity": "LKUP_SQL_TABLE_WATRMRK_DW",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -45,7 +45,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@activity('LKP_SQL_TABLE_WATRMRK_DW').output.value",
+						"value": "@activity('LKUP_SQL_TABLE_WATRMRK_DW').output.value",
 						"type": "Expression"
 					},
 					"activities": [
