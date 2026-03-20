@@ -123,14 +123,8 @@
 							],
 							"outputs": [
 								{
-									"referenceName": "DS_SQLTABLE_PARQUET",
-									"type": "DatasetReference",
-									"parameters": {
-										"Table_Name": {
-											"value": "@pipeline().parameters.TableName",
-											"type": "Expression"
-										}
-									}
+									"referenceName": "DS_SQL_TABLE_PAR",
+									"type": "DatasetReference"
 								}
 							]
 						},
