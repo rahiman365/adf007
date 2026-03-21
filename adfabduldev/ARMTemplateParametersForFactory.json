@@ -59,6 +59,12 @@
 		"SqlServer2_password": {
 			"value": ""
 		},
+		"ls_SqlServer3_password": {
+			"value": ""
+		},
+		"LS_SIMPLE_AzureDataLakeStorage3_accountKey": {
+			"value": ""
+		},
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"value": "https://mycontainerabdul.dfs.core.windows.net/"
 		},
@@ -181,6 +187,18 @@
 		},
 		"SqlServer2_properties_typeProperties_userName": {
 			"value": "junnu"
+		},
+		"ls_SqlServer3_properties_typeProperties_server": {
+			"value": "RAHMAN"
+		},
+		"ls_SqlServer3_properties_typeProperties_database": {
+			"value": "test_db"
+		},
+		"ls_SqlServer3_properties_typeProperties_userName": {
+			"value": "junnu"
+		},
+		"LS_SIMPLE_AzureDataLakeStorage3_properties_typeProperties_url": {
+			"value": "https://simplestorage9030.dfs.core.windows.net/"
 		}
 	}
 }

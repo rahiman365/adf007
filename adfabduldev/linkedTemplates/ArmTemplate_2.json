@@ -27,6 +27,22 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'SqlServer2'"
 		},
+		"ls_SqlServer3_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'ls_SqlServer3'"
+		},
+		"LS_ASQL_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "abdulsqlserveronline.database.windows.net"
+		},
+		"LS_ASQL_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "testdata"
+		},
+		"LS_ASQL_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "admindata"
+		},
 		"LS_LKUP_MAX_VALUE_properties_typeProperties_server": {
 			"type": "string",
 			"defaultValue": "RAHMAN"
@@ -86,12 +102,50 @@
 		"SqlServer2_properties_typeProperties_userName": {
 			"type": "string",
 			"defaultValue": "junnu"
+		},
+		"ls_SqlServer3_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "RAHMAN"
+		},
+		"ls_SqlServer3_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "test_db"
+		},
+		"ls_SqlServer3_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "junnu"
 		}
 	},
 	"variables": {
 		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
 	},
 	"resources": [
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_ASQL')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"server": "[parameters('LS_ASQL_properties_typeProperties_server')]",
+					"database": "[parameters('LS_ASQL_properties_typeProperties_database')]",
+					"encrypt": "mandatory",
+					"trustServerCertificate": false,
+					"authenticationType": "SQL",
+					"userName": "[parameters('LS_ASQL_properties_typeProperties_userName')]",
+					"password": {
+						"type": "AzureKeyVaultSecret",
+						"store": {
+							"referenceName": "AzureKeyVault1",
+							"type": "LinkedServiceReference"
+						},
+						"secretName": "project1"
+					}
+				}
+			},
+			"dependsOn": []
+		},
 		{
 			"name": "[concat(parameters('factoryName'), '/LS_LKUP_MAX_VALUE')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
@@ -219,6 +273,53 @@
 					"referenceName": "integrationRuntimeSQLServer",
 					"type": "IntegrationRuntimeReference"
 				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/ls_SqlServer3')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "SqlServer",
+				"typeProperties": {
+					"server": "[parameters('ls_SqlServer3_properties_typeProperties_server')]",
+					"database": "[parameters('ls_SqlServer3_properties_typeProperties_database')]",
+					"encrypt": "optional",
+					"trustServerCertificate": false,
+					"authenticationType": "SQL",
+					"userName": "[parameters('ls_SqlServer3_properties_typeProperties_userName')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('ls_SqlServer3_password')]"
+					}
+				},
+				"connectVia": {
+					"referenceName": "integrationRuntimeSQLServer",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/simple_Parquet3')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "LS_SIMPLE_AzureDataLakeStorage3",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Parquet",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation"
+					},
+					"compressionCodec": "snappy"
+				},
+				"schema": []
 			},
 			"dependsOn": []
 		},
@@ -1193,203 +1294,6 @@
 				"lastPublishTime": "2026-03-10T03:38:06Z"
 			},
 			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/AzureSqlTable1')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureSqlDatabase2",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [
-					{
-						"name": "CustomerKey",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "GeographyKey",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "CustomerAlternateKey",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Title",
-						"type": "nvarchar"
-					},
-					{
-						"name": "FirstName",
-						"type": "nvarchar"
-					},
-					{
-						"name": "MiddleName",
-						"type": "nvarchar"
-					},
-					{
-						"name": "LastName",
-						"type": "nvarchar"
-					},
-					{
-						"name": "NameStyle",
-						"type": "bit"
-					},
-					{
-						"name": "BirthDate",
-						"type": "date"
-					},
-					{
-						"name": "MaritalStatus",
-						"type": "nchar"
-					},
-					{
-						"name": "Suffix",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Gender",
-						"type": "nvarchar"
-					},
-					{
-						"name": "EmailAddress",
-						"type": "nvarchar"
-					},
-					{
-						"name": "YearlyIncome",
-						"type": "money",
-						"precision": 19,
-						"scale": 4
-					},
-					{
-						"name": "TotalChildren",
-						"type": "tinyint",
-						"precision": 3
-					},
-					{
-						"name": "NumberChildrenAtHome",
-						"type": "tinyint",
-						"precision": 3
-					},
-					{
-						"name": "EnglishEducation",
-						"type": "nvarchar"
-					},
-					{
-						"name": "SpanishEducation",
-						"type": "nvarchar"
-					},
-					{
-						"name": "FrenchEducation",
-						"type": "nvarchar"
-					},
-					{
-						"name": "EnglishOccupation",
-						"type": "nvarchar"
-					},
-					{
-						"name": "SpanishOccupation",
-						"type": "nvarchar"
-					},
-					{
-						"name": "FrenchOccupation",
-						"type": "nvarchar"
-					},
-					{
-						"name": "HouseOwnerFlag",
-						"type": "nchar"
-					},
-					{
-						"name": "NumberCarsOwned",
-						"type": "tinyint",
-						"precision": 3
-					},
-					{
-						"name": "AddressLine1",
-						"type": "nvarchar"
-					},
-					{
-						"name": "AddressLine2",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Phone",
-						"type": "nvarchar"
-					},
-					{
-						"name": "DateFirstPurchase",
-						"type": "date"
-					},
-					{
-						"name": "CommuteDistance",
-						"type": "nvarchar"
-					}
-				],
-				"typeProperties": {
-					"schema": "dbo",
-					"table": "DimCustomer"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/DS_ASQL_ORDER')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "LS_ASQL",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [],
-				"typeProperties": {
-					"schema": "audit",
-					"table": "copylog"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/DS_LKUP_MAX_VALUE')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "LS_LKUP_MAX_VALUE",
-					"type": "LinkedServiceReference"
-				},
-				"parameters": {
-					"schemaname": {
-						"type": "string"
-					},
-					"tablename": {
-						"type": "string"
-					}
-				},
-				"annotations": [],
-				"type": "SqlServerTable",
-				"schema": [],
-				"typeProperties": {
-					"schema": {
-						"value": "@dataset().schemaname",
-						"type": "Expression"
-					},
-					"table": {
-						"value": "@dataset().tablename",
-						"type": "Expression"
-					}
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/LS_LKUP_MAX_VALUE')]"
-			]
 		}
 	]
 }
