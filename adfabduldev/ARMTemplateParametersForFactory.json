@@ -41,6 +41,9 @@
 		"LS_OUTPUT_FILES_accountKey": {
 			"value": ""
 		},
+		"LS_SIMPLE_AzureDataLakeStorage3_accountKey": {
+			"value": ""
+		},
 		"LS_SQL_PARQUET_accountKey": {
 			"value": ""
 		},
@@ -60,9 +63,6 @@
 			"value": ""
 		},
 		"ls_SqlServer3_password": {
-			"value": ""
-		},
-		"LS_SIMPLE_AzureDataLakeStorage3_accountKey": {
 			"value": ""
 		},
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
@@ -146,6 +146,9 @@
 		"LS_OUTPUT_FILES_properties_typeProperties_url": {
 			"value": "https://mycontainerabdul.dfs.core.windows.net/"
 		},
+		"LS_SIMPLE_AzureDataLakeStorage3_properties_typeProperties_url": {
+			"value": "https://simplestorage9030.dfs.core.windows.net/"
+		},
 		"LS_SQL_PARQUET_properties_typeProperties_url": {
 			"value": "https://retaildwproject.dfs.core.windows.net/"
 		},
@@ -196,9 +199,6 @@
 		},
 		"ls_SqlServer3_properties_typeProperties_userName": {
 			"value": "junnu"
-		},
-		"LS_SIMPLE_AzureDataLakeStorage3_properties_typeProperties_url": {
-			"value": "https://simplestorage9030.dfs.core.windows.net/"
 		}
 	}
 }

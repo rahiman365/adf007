@@ -55,6 +55,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_OUTPUT_FILES'"
 		},
+		"LS_SIMPLE_AzureDataLakeStorage3_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_SIMPLE_AzureDataLakeStorage3'"
+		},
 		"LS_SQL_PARQUET_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_SQL_PARQUET'"
@@ -82,10 +86,6 @@
 		"ls_SqlServer3_password": {
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'ls_SqlServer3'"
-		},
-		"LS_SIMPLE_AzureDataLakeStorage3_accountKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'LS_SIMPLE_AzureDataLakeStorage3'"
 		},
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"type": "string",
@@ -195,6 +195,10 @@
 			"type": "string",
 			"defaultValue": "https://mycontainerabdul.dfs.core.windows.net/"
 		},
+		"LS_SIMPLE_AzureDataLakeStorage3_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://simplestorage9030.dfs.core.windows.net/"
+		},
 		"LS_SQL_PARQUET_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://retaildwproject.dfs.core.windows.net/"
@@ -263,10 +267,6 @@
 			"type": "string",
 			"defaultValue": "junnu"
 		},
-		"LS_SIMPLE_AzureDataLakeStorage3_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://simplestorage9030.dfs.core.windows.net/"
-		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -327,11 +327,11 @@
 					"LS_OUTPUT_FILES_accountKey": {
 						"value": "[parameters('LS_OUTPUT_FILES_accountKey')]"
 					},
+					"LS_SIMPLE_AzureDataLakeStorage3_accountKey": {
+						"value": "[parameters('LS_SIMPLE_AzureDataLakeStorage3_accountKey')]"
+					},
 					"LS_SQL_PARQUET_accountKey": {
 						"value": "[parameters('LS_SQL_PARQUET_accountKey')]"
-					},
-					"LS_VALIDATION_accountKey": {
-						"value": "[parameters('LS_VALIDATION_accountKey')]"
 					},
 					"AzureDataLakeStorage1_properties_typeProperties_url": {
 						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
@@ -378,11 +378,11 @@
 					"LS_OUTPUT_FILES_properties_typeProperties_url": {
 						"value": "[parameters('LS_OUTPUT_FILES_properties_typeProperties_url')]"
 					},
+					"LS_SIMPLE_AzureDataLakeStorage3_properties_typeProperties_url": {
+						"value": "[parameters('LS_SIMPLE_AzureDataLakeStorage3_properties_typeProperties_url')]"
+					},
 					"LS_SQL_PARQUET_properties_typeProperties_url": {
 						"value": "[parameters('LS_SQL_PARQUET_properties_typeProperties_url')]"
-					},
-					"LS_VALIDATION_properties_typeProperties_url": {
-						"value": "[parameters('LS_VALIDATION_properties_typeProperties_url')]"
 					}
 				}
 			},
@@ -402,11 +402,11 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
-					"LS_SIMPLE_AzureDataLakeStorage3_accountKey": {
-						"value": "[parameters('LS_SIMPLE_AzureDataLakeStorage3_accountKey')]"
+					"LS_VALIDATION_accountKey": {
+						"value": "[parameters('LS_VALIDATION_accountKey')]"
 					},
-					"LS_SIMPLE_AzureDataLakeStorage3_properties_typeProperties_url": {
-						"value": "[parameters('LS_SIMPLE_AzureDataLakeStorage3_properties_typeProperties_url')]"
+					"LS_VALIDATION_properties_typeProperties_url": {
+						"value": "[parameters('LS_VALIDATION_properties_typeProperties_url')]"
 					},
 					"AzureSqlDatabase1_properties_typeProperties_server": {
 						"value": "[parameters('AzureSqlDatabase1_properties_typeProperties_server')]"
@@ -416,15 +416,6 @@
 					},
 					"AzureSqlDatabase1_properties_typeProperties_userName": {
 						"value": "[parameters('AzureSqlDatabase1_properties_typeProperties_userName')]"
-					},
-					"AzureSqlDatabase2_properties_typeProperties_server": {
-						"value": "[parameters('AzureSqlDatabase2_properties_typeProperties_server')]"
-					},
-					"AzureSqlDatabase2_properties_typeProperties_database": {
-						"value": "[parameters('AzureSqlDatabase2_properties_typeProperties_database')]"
-					},
-					"AzureSqlDatabase2_properties_typeProperties_userName": {
-						"value": "[parameters('AzureSqlDatabase2_properties_typeProperties_userName')]"
 					}
 				}
 			},
@@ -463,6 +454,15 @@
 					},
 					"ls_SqlServer3_password": {
 						"value": "[parameters('ls_SqlServer3_password')]"
+					},
+					"AzureSqlDatabase2_properties_typeProperties_server": {
+						"value": "[parameters('AzureSqlDatabase2_properties_typeProperties_server')]"
+					},
+					"AzureSqlDatabase2_properties_typeProperties_database": {
+						"value": "[parameters('AzureSqlDatabase2_properties_typeProperties_database')]"
+					},
+					"AzureSqlDatabase2_properties_typeProperties_userName": {
+						"value": "[parameters('AzureSqlDatabase2_properties_typeProperties_userName')]"
 					},
 					"LS_ASQL_properties_typeProperties_server": {
 						"value": "[parameters('LS_ASQL_properties_typeProperties_server')]"
